@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyanshu Patel - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            /* slate-900 */
+            color: #cbd5e1;
+            /* slate-300 */
+        }
+
+        .glassmorphism {
+            background: rgba(15, 23, 42, 0.6);
+            /* slate-900 with opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-card:hover .skill-name {
+            color: #38bdf8;
+            /* sky-400 */
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.2), 0 4px 6px -2px rgba(56, 189, 248, 0.1);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glassmorphism">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Divyanshu Patel</h1>
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block text-center py-2 px-4 text-sm hover:bg-slate-700">About</a>
+            <a href="#skills" class="block text-center py-2 px-4 text-sm hover:bg-slate-700">Skills</a>
+            <a href="#projects" class="block text-center py-2 px-4 text-sm hover:bg-slate-700">Projects</a>
+            <a href="#experience" class="block text-center py-2 px-4 text-sm hover:bg-slate-700">Experience</a>
+            <a href="#contact" class="block text-center py-2 px-4 text-sm hover:bg-slate-700">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-20">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-4">Full Stack Developer</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-slate-400">
+                I build dynamic and responsive web applications from concept to deployment. Specializing in the MERN
+                stack to create robust and user-friendly web solutions.
+            </p>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="https://wa.me/919173150179?text=Hello%20Divyanshu,%20I%20would%20like%20to%20connect%20with%20you."
+                    target="_blank"
+                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                    Contact Me on WhatsApp
+                </a>
+                <a href="https://github.com/Divyanshu1121" target="_blank" rel="noopener noreferrer"
+                    class="text-white hover:text-sky-400 transition-colors">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white">About Me</h2>
+                <div class="h-1 w-20 bg-sky-500 mx-auto mt-2"></div>
+            </div>
+            <div class="max-w-4xl mx-auto text-center text-lg text-slate-400">
+                <p>
+                    I'm a passionate Information Technology student at C.K Pithawala College Of Engineering And
+                    Technology, specializing in Full Stack Development. I thrive on solving complex problems and enjoy
+                    turning ideas into reality through code. As a quick learner with a strong collaborative spirit, I'm
+                    always excited to dive into new technologies and contribute to meaningful projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white">My Tech Stack</h2>
+                <p class="text-slate-400 mt-2">Technologies I work with to build my projects.</p>
+                <div class="h-1 w-20 bg-sky-500 mx-auto mt-2"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+                <!-- Skill Card Example -->
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-orange-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">HTML</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h8a2 2 0 002-2v-4a2 2 0 00-2-2h-8a2 2 0 00-2 2v4a2 2 0 002 2z" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">CSS</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">JavaScript</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">React.js</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">Node.js</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">Express.js</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">MongoDB</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h8a2 2 0 002-2v-4a2 2 0 00-2-2h-8a2 2 0 00-2 2v4a2 2 0 002 2z" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">Bootstrap</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">Tailwind CSS</span>
+                </div>
+                <div
+                    class="skill-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <svg class="h-16 w-16 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5-3.75l-16.5 0" />
+                    </svg>
+                    <span class="skill-name mt-2 text-lg font-medium text-white transition-colors">Git & GitHub</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white">Featured Projects</h2>
+                <p class="text-slate-400 mt-2">A selection of my work. See something you like?</p>
+                <div class="h-1 w-20 bg-sky-500 mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Project 0: Internship Project -->
+                <div class="project-card rounded-xl overflow-hidden glassmorphism">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Excel+Analytics+Platform"
+                        alt="Excel Analytics Platform" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Excel Analytics Platform</h3>
+                        <p class="text-slate-400 mb-4">A data visualization and analytics tool developed during my
+                            internship at Zidio Development. Features a dynamic front-end for interacting with
+                            spreadsheet data.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">React</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Express.js</span>
+                        </div>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="https://github.com/Divyanshu1121/Excel-Analytics-Platform" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-white font-semibold py-2 px-4 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors w-full text-center">GitHub
+                                Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1: LMS -->
+                <div class="project-card rounded-xl overflow-hidden glassmorphism">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Leave+Management+System"
+                        alt="Leave Management System" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Leave Management System (LMS)</h3>
+                        <p class="text-slate-400 mb-4">A full-stack application for employee leave handling, featuring
+                            role-based access control and secure authentication.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">React</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Firebase</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Express.js</span>
+                        </div>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="https://github.com/Divyanshu1121/LMS-Auth" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-white font-semibold py-2 px-4 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors w-full text-center">GitHub
+                                Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Trendora -->
+                <div class="project-card rounded-xl overflow-hidden glassmorphism">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Trendora+Online+Store"
+                        alt="Trendora Online Store" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Trendora Online Store</h3>
+                        <p class="text-slate-400 mb-4">A modern and trendy e-commerce front-end with modular React
+                            components, a responsive layout, and efficient cart management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">React</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">CSS</span>
+                        </div>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="https://github.com/Divyanshu1121/Trendora-Store" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-white font-semibold py-2 px-4 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors w-full text-center">GitHub
+                                Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: E-commerce API -->
+                <div class="project-card rounded-xl overflow-hidden glassmorphism">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=E-commerce+API" alt="E-Commerce API"
+                        class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">E-Commerce API</h3>
+                        <p class="text-slate-400 mb-4">A complete backend API service for an e-commerce platform.
+                            Features RESTful endpoints, secure user authentication, and full product CRUD operations.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">Express.js</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="https://github.com/Divyanshu1121/E-Commerce" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-white font-semibold py-2 px-4 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors w-full text-center">GitHub
+                                Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Watch Store -->
+                <div class="project-card rounded-xl overflow-hidden glassmorphism">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Watch+Store" alt="Watch Store"
+                        class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Watch Store with LocalStorage</h3>
+                        <p class="text-slate-400 mb-4">A static e-commerce site where users can add watches to a cart.
+                            The cart state persists across sessions using browser `localStorage`.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">HTML</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">CSS</span>
+                            <span
+                                class="bg-slate-700 text-sky-400 text-sm font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="https://github.com/Divyanshu1121/Watch-Store-LocalStorage" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-white font-semibold py-2 px-4 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors w-full text-center">GitHub
+                                Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white">Experience</h2>
+                <div class="h-1 w-20 bg-sky-500 mx-auto mt-2"></div>
+            </div>
+            <div class="max-w-3xl mx-auto p-8 rounded-xl glassmorphism">
+                <h3 class="text-2xl font-bold text-sky-400">Web Developer Intern</h3>
+                <p class="text-lg font-medium text-white mb-2">Zidio Development Pvt Ltd.</p>
+                <ul class="list-disc list-inside text-slate-400 space-y-2">
+                    <li>Developed and implemented key front-end components for an Excel Analytics Platform using
+                        React.js, improving data visualization capabilities.</li>
+                    <li>Built and integrated RESTful API endpoints with Node.js and Express.js to handle data parsing
+                        and user queries efficiently.</li>
+                    <li>Collaborated with the development team using Git for version control and participated in daily
+                        stand-up meetings to track project progress.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white">Education & Certifications</h2>
+                <div class="h-1 w-20 bg-sky-500 mx-auto mt-2"></div>
+            </div>
+            <div class="max-w-3xl mx-auto p-8 rounded-xl glassmorphism">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-sky-400">C.K Pithawala College Of Engineering And Technology</h3>
+                    <p class="text-lg font-medium text-white">Bachelor of Engineering, Information Technology
+                        (2022-2026)</p>
+                    <p class="text-slate-400">Honors Degree in Data Science, Gujarat Technological University
+                        (2024-2026)</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-sky-400">Professional Development</h3>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 mt-2">
+                        <li>Full Stack Development (MERN) - Red and White Institute</li>
+                        <li>Basic Python - Infosys Springboard</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-8">
+                I'm currently seeking internship opportunities. If you have a role that might be a good fit, or just
+                want to connect, feel free to reach out!
+            </p>
+
+            <!-- Email Option -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=divyanshupatel5633@gmail.com" target="_blank"
+                class="block max-w-xs mx-auto mb-4 bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-lg transition-transform transform hover:scale-105">
+                Say Hello via Gmail
+            </a>
+
+
+            <!-- WhatsApp Option -->
+            <a href="https://wa.me/919173150179?text=Hello%20Divyanshu,%20I%20would%20like%20to%20connect%20with%20you."
+                target="_blank"
+                class="block max-w-xs mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-transform transform hover:scale-105">
+                Say Hello on WhatsApp
+            </a>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://github.com/Divyanshu1121" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-sky-400 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=divyanshupatel5633@gmail.com"
+                    class="hover:text-sky-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" />
+                    </svg>
+                </a>
+                <a href="https://wa.me/919173150179?text=Hello%20Divyanshu,%20I%20would%20like%20to%20connect%20with%20you."
+                    class="hover:text-sky-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Divyanshu Patel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
